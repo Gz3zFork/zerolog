@@ -139,9 +139,9 @@ func (e *Event) MsgFunc(createMsg func() string) {
 }
 
 func (e *Event) msg(msg string) {
-	for _, hook := range e.ch {
-		hook.Run(e, e.level, msg)
-	}
+	//for _, hook := range e.ch {
+	//	hook.Run(e, e.level, msg)
+	//}
 	if msg != "" {
 		e.buf = enc.AppendString(enc.AppendKey(e.buf, MessageFieldName), msg)
 	}
